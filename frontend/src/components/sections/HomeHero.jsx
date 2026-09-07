@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom';
-import Button from '../ui/Button';
-import FeatureIcon from '../ui/FeatureIcon';
-import Reveal from '../ui/Reveal';
-import { heroCopy, heroFeatures } from '../../data/home';
-import heroBackground from '../../assets/images/home/background.png';
+import { Link } from "react-router-dom";
+import Button from "../ui/Button";
+import FeatureIcon from "../ui/FeatureIcon";
+import Reveal from "../ui/Reveal";
+import { heroCopy, heroFeatures } from "../../data/home";
+import heroBackground from "../../assets/images/home/background.png";
 
 export default function HomeHero() {
   return (
@@ -34,12 +34,25 @@ export default function HomeHero() {
           </Reveal>
 
           <Reveal delay={0.22} className="home-hero__actions">
-            <Button as={Link} to={heroCopy.primaryCta.to} variant="accent" className="home-hero__primary">
-              <FeatureIcon name="bolt" className="feature-icon--inline feature-icon--dark" />
+            <Button
+              as={Link}
+              to={heroCopy.primaryCta.to}
+              variant="accent"
+              className="home-hero__primary"
+            >
+              <FeatureIcon
+                name="bolt"
+                className="feature-icon--inline feature-icon--dark"
+              />
               {heroCopy.primaryCta.label}
             </Button>
 
-            <Button as={Link} to={heroCopy.secondaryCta.to} variant="ghost" className="home-hero__secondary">
+            <Button
+              as={Link}
+              to={heroCopy.secondaryCta.to}
+              variant="ghost"
+              className="home-hero__secondary"
+            >
               <FeatureIcon name="play" className="feature-icon--inline" />
               {heroCopy.secondaryCta.label}
             </Button>
@@ -53,7 +66,9 @@ export default function HomeHero() {
                 <FeatureIcon name={feature.icon} />
                 <div>
                   <h2 className="home-feature-card__title">{feature.title}</h2>
-                  <p className="home-feature-card__description">{feature.description}</p>
+                  <p className="home-feature-card__description">
+                    {feature.description}
+                  </p>
                 </div>
               </li>
             ))}

@@ -130,13 +130,13 @@ The dark interface and high-contrast imagery are intentional parts of the brand 
 
 Initial routes:
 
-| Route | Page |
-|---|---|
-| `/` | Home |
-| `/product` | Product |
-| `/pricing` | Pricing |
-| `/about` | About Us |
-| `/support` | Support |
+| Route      | Page       |
+| ---------- | ---------- |
+| `/`        | Home       |
+| `/product` | Product    |
+| `/pricing` | Pricing    |
+| `/about`   | About Us   |
+| `/support` | Support    |
 | `/contact` | Contact Us |
 
 Potential future routes may include:

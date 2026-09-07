@@ -699,6 +699,7 @@ Reuse where useful.
 Responsive behaviour must be intentional.
 
 Do not overengineer.
+
 # Acecore Frontend — Cursor Engineering Instructions
 
 ## 1. Project Context
@@ -1401,8 +1402,6 @@ Responsive behaviour must be intentional.
 
 Do not overengineer.
 
-
-
 # FIGMA IMPLEMENTATION CONTRACT
 
 This project is a Figma-to-React implementation.
@@ -1551,7 +1550,8 @@ tablet:
 640px – 1023px
 
 desktop:
->= 1024px
+
+> = 1024px
 
 Do not create many arbitrary breakpoint hacks.
 
