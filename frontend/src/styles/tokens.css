@@ -1,0 +1,45 @@
+:root {
+  /* Surfaces */
+  --color-bg: #000000;
+  --color-surface: #121212;
+  --color-surface-secondary: #1a1a1a;
+  --color-navy: #0b0f14;
+
+  /* Text */
+  --color-text: #ffffff;
+  --color-text-muted: #b0b0b0;
+  --color-text-inverse: #0a0a0a;
+
+  /* Brand — Figma primary */
+  --color-brand: #01937c;
+  --color-brand-deep: #017a67;
+  --color-accent: #f0a020;
+  --color-border: rgba(255, 255, 255, 0.12);
+
+  /* Layout */
+  --container-max: 1320px;
+  --page-gutter: 1rem;
+  --home-shell-max: none;
+  --home-desktop-gutter: 4.5rem;
+  --header-max: 92rem;
+  --section-space: clamp(4rem, 8vw, 7.5rem);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --announcement-height: 2.75rem;
+  --nav-height: 4.35rem;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-header: 500ms;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: clamp(1.25rem, 2vw, 1.5rem);
+  --text-2xl: clamp(1.75rem, 3vw, 2.5rem);
+  --text-3xl: clamp(2.25rem, 5vw, 3.75rem);
+}
