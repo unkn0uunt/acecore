@@ -2,6 +2,10 @@
 @import './utilities.css';
 @import './header.css';
 @import './preload.css';
+@import './pricing.css';
+@import './comparison.css';
+@import './product.css';
+@import './about.css';
 
 *,
 *::before,
@@ -93,7 +97,7 @@ p {
   min-height: 2.75rem;
   padding: 0.75rem 1.25rem;
   border: 1px solid transparent;
-  border-radius: 999px;
+  border-radius: 12px;
   font-weight: 600;
   transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
 }
@@ -382,35 +386,6 @@ p {
   background: var(--color-surface);
 }
 
-.pricing-toggle {
-  display: inline-flex;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-  padding: 0.35rem;
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-}
-
-.pricing-toggle button {
-  background: transparent;
-  border: 0;
-  color: var(--color-text-muted);
-  border-radius: 999px;
-  padding: 0.55rem 0.95rem;
-}
-
-.pricing-toggle button.is-active {
-  background: var(--color-surface-secondary);
-  color: var(--color-text);
-}
-
-.pricing-grid,
-.about-pillars,
-.about-values {
-  display: grid;
-  gap: 1rem;
-}
-
 .ecosystem-banner,
 .faq-section {
   padding-block: var(--section-space);
@@ -420,15 +395,4 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-}
-
-@media (min-width: 900px) {
-  .pricing-grid,
-  .about-pillars {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .about-values {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
 }

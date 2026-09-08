@@ -1776,3 +1776,30 @@ A mobile section is complete only when:
 - no horizontal overflow exists
 - spacing remains intentional
 - layout works from 360px to 430px
+
+---
+
+# CROSS-PAGE MOTION
+
+Use the shared `Reveal` component for section entrances on **all pages**, not only Home.
+
+Do not invent page-specific reveal systems when `components/ui/Reveal.jsx` already exists.
+
+---
+
+# DENSE DESKTOP DATA RULE
+
+When a Figma section contains a dense desktop table, matrix, comparison grid, or large dataset:
+
+Do not blindly shrink the desktop structure for mobile.
+
+Preserve the same data source but choose a mobile presentation appropriate to the information.
+
+Allowed mobile adaptations include:
+
+- selectable product tabs
+- stacked label/value rows
+- controlled horizontal scrolling
+- collapsible specification groups
+
+Never hide meaningful data solely because the viewport is smaller.

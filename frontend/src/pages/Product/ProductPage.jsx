@@ -1,25 +1,22 @@
 import PageLayout from '../../components/layout/PageLayout';
-import Container from '../../components/ui/Container';
-import SectionHeader from '../../components/ui/SectionHeader';
-import FAQSection from '../../components/sections/FAQSection';
-import EcosystemBanner from '../../components/sections/EcosystemBanner';
-import { productFaqs } from '../../data/faqs';
+import ProductHero from '../../components/sections/ProductHero';
+import ProductCompareIntro from '../../components/sections/ProductCompareIntro';
+import ProductMechanicalSpecs from '../../components/sections/ProductMechanicalSpecs';
+import ProductPowerOptions from '../../components/sections/ProductPowerOptions';
+import ProductPowercoreApp from '../../components/sections/ProductPowercoreApp';
+import HomeSupport from '../../components/sections/HomeSupport';
+import HomeEcosystem from '../../components/sections/HomeEcosystem';
 
 export default function ProductPage() {
   return (
     <PageLayout>
-      <section className="page-hero">
-        <Container>
-          <SectionHeader
-            eyebrow="PowerCell"
-            title="5KVA energy storage engineered for everyday reliability."
-            description="Battery technology, intelligent energy management and clean power for homes and businesses."
-          />
-        </Container>
-      </section>
-
-      <FAQSection items={productFaqs} />
-      <EcosystemBanner />
+      <ProductHero />
+      <ProductCompareIntro />
+      <ProductMechanicalSpecs />
+      <ProductPowerOptions />
+      <ProductPowercoreApp />
+      <HomeSupport />
+      <HomeEcosystem />
     </PageLayout>
   );
 }

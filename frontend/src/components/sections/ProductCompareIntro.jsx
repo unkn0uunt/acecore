@@ -1,0 +1,30 @@
+import Reveal from '../ui/Reveal';
+import { productCompareCopy } from '../../data/product';
+
+export default function ProductCompareIntro() {
+  return (
+    <section className="product-compare-intro" aria-labelledby="product-compare-intro-title">
+      <div className="product-compare-intro__inner home-shell">
+        <Reveal className="product-compare-intro__content">
+          <p className="product-compare-intro__eyebrow">{productCompareCopy.eyebrow}</p>
+          <h2 id="product-compare-intro-title" className="product-compare-intro__body">
+            <span className="product-compare-intro__lead">{productCompareCopy.lead}</span>{' '}
+            <span className="product-compare-intro__trail">{productCompareCopy.trail}</span>
+          </h2>
+        </Reveal>
+
+        <Reveal className="product-compare-intro__visual" y={24} delay={0.06}>
+          <div
+            className="product-compare-intro__placeholder"
+            role="img"
+            aria-label="Compare models visual placeholder"
+          >
+            <span className="product-compare-intro__placeholder-label">
+              Compare models visual coming soon
+            </span>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
