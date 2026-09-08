@@ -14,11 +14,12 @@ export const primaryNav = [
 
 export const contactCta = {
   label: 'Contact US',
-  to: '/contact',
+  to: '/support',
 };
 
 export const announcement = {
   text: 'Save on electricity by installing our powercell in your home',
   linkLabel: 'Join Presale',
-  href: '/contact',
+  href: 'https://wa.me/2349015294724',
+  external: true,
 };

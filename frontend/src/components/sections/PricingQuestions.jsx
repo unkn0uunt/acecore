@@ -23,7 +23,7 @@ export default function PricingQuestions() {
 
           <Button
             as={Link}
-            to="/contact"
+            to="/support"
             variant="brand"
             className="pricing-questions__cta"
           >

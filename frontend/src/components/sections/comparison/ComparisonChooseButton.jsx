@@ -6,7 +6,7 @@ export default function ComparisonChooseButton({ className = '' }) {
   return (
     <Button
       as={Link}
-      to="/contact"
+      to="/support"
       variant="brand"
       className={`comparison-choose ${className}`.trim()}
     >

@@ -101,7 +101,7 @@ export default function PricingPlans() {
                         </ul>
                       </div>
 
-                      <Link to="/contact" className="pricing-card__cta">
+                      <Link to="/support" className="pricing-card__cta">
                         <span className="pricing-card__cta-icon" aria-hidden="true">
                           ↗
                         </span>

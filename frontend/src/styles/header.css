@@ -4,7 +4,7 @@
   position: fixed;
   inset-inline: 0;
   top: 0;
-  z-index: 50;
+  z-index: 80;
   pointer-events: none;
 }
 
@@ -205,10 +205,6 @@
   flex-shrink: 0;
 }
 
-.navbar__menu-trigger {
-  margin-left: auto;
-}
-
 .btn--brand {
   background: var(--color-brand);
   color: #ffffff;
@@ -254,12 +250,18 @@
 .navbar__menu-trigger {
   display: inline-grid;
   place-items: center;
+  flex-shrink: 0;
   width: 2.75rem;
   height: 2.75rem;
+  margin-left: auto;
   border: 0;
   border-radius: 999px;
   background: transparent;
   color: #ffffff;
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  z-index: 2;
 }
 
 .menu-toggle-icon {
@@ -370,7 +372,7 @@
   padding: 0.7rem 0.25rem;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1400px) {
   .navbar-shell.is-floating {
     padding-inline: 0;
   }
@@ -441,6 +443,19 @@
   height: 100%;
   object-fit: cover;
   object-position: 70% center;
+}
+
+/* iPad / tablet: keep the house + PowerCell (far right in the asset) in frame */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .home-hero__image {
+    object-position: 92% center;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-hero__image {
+    object-position: 88% center;
+  }
 }
 
 .home-hero__scrim {
@@ -612,6 +627,19 @@
   .home-hero__features-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.35rem;
+  }
+}
+
+/* iPad / tablet: seat hero copy just above the 3 feature tabs */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .home-hero__copy {
+    padding-top: 0;
+    margin-top: auto;
+  }
+
+  .home-hero__features {
+    margin-top: clamp(1.25rem, 3vh, 2rem);
+    padding-top: 0;
   }
 }
 
@@ -931,6 +959,11 @@
 
 .home-solution__card-link:hover {
   color: #33d4b4;
+}
+
+.home-solution__card-link--pending {
+  cursor: default;
+  pointer-events: none;
 }
 
 .home-solution__card-media {

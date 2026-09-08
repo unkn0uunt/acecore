@@ -102,7 +102,7 @@ export const solutionCards = [
     title: 'Acecore Powercell',
     description:
       'The Acecore PowerCell is a compact and advanced energy storage solution that combines cutting-edge lithium-ion battery technology with intelligent energy management capabilities. This all-in-one device is designed to revolutionize the way you store and utilize electricity in your home or business.',
-    cta: { label: 'Get Your Powercell', to: '/product' },
+    cta: { label: 'Get Your Powercell', to: '/pricing' },
     image: 'powercell',
     imageAlt: 'Acecore Powercell energy storage unit',
   },
@@ -111,7 +111,7 @@ export const solutionCards = [
     title: 'Acecore Power Core App',
     description:
       'The Acecore PowerCore app is a comprehensive energy management tool designed to empower you with real-time control and insights into your Acecore PowerCell inverter and energy storage system. With this user-friendly application, you can take charge of your energy usage like never before.',
-    cta: { label: 'Get Your Powercell', to: '/product' },
+    cta: { label: 'Get your Powercore App', to: null },
     image: 'powercore',
     imageAlt: 'Acecore Power Core mobile app on a smartphone',
   },

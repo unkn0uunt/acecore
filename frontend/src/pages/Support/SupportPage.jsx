@@ -1,18 +1,16 @@
 import PageLayout from '../../components/layout/PageLayout';
-import Container from '../../components/ui/Container';
-import SectionHeader from '../../components/ui/SectionHeader';
+import SupportContact from '../../components/sections/SupportContact';
+import HelpCenter from '../../components/sections/HelpCenter';
+import HomeSupport from '../../components/sections/HomeSupport';
+import HomeEcosystem from '../../components/sections/HomeEcosystem';
 
 export default function SupportPage() {
   return (
     <PageLayout>
-      <section className="page-hero">
-        <Container>
-          <SectionHeader
-            title="Support"
-            description="This route is scaffolded. Final Support page design is pending a corrected reference."
-          />
-        </Container>
-      </section>
+      <SupportContact />
+      <HelpCenter />
+      <HomeSupport />
+      <HomeEcosystem />
     </PageLayout>
   );
 }

@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect } from 'react';
 import logoWhite from '../../assets/logos/acecore-white.svg';
@@ -9,6 +9,20 @@ import MenuToggleIcon from '../ui/MenuToggleIcon';
 import ServicesDropdown from './ServicesDropdown';
 
 const easeOut = [0.16, 1, 0.3, 1];
+
+function ContactCta({ className = '', onClick }) {
+  return (
+    <Button
+      as={Link}
+      to={contactCta.to}
+      variant="brand"
+      className={className}
+      onClick={onClick}
+    >
+      {contactCta.label}
+    </Button>
+  );
+}
 
 function NavItems({ onNavigate }) {
   return (
@@ -91,9 +105,7 @@ export default function Navbar({
             <NavItems />
           </nav>
 
-          <Button as={NavLink} to={contactCta.to} variant="brand" className="navbar__cta navbar__cta--desktop">
-            {contactCta.label}
-          </Button>
+          <ContactCta className="navbar__cta navbar__cta--desktop" />
 
           <button
             type="button"
@@ -125,9 +137,7 @@ export default function Navbar({
               <NavItems onNavigate={onCloseMenu} />
             </nav>
 
-            <Button as={NavLink} to={contactCta.to} variant="brand" onClick={onCloseMenu}>
-              {contactCta.label}
-            </Button>
+            <ContactCta onClick={onCloseMenu} />
           </motion.div>
         ) : null}
       </AnimatePresence>

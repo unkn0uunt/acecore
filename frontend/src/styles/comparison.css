@@ -377,7 +377,7 @@
   justify-content: center;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   .comparison-section__title {
     white-space: nowrap;
   }
@@ -392,7 +392,8 @@
   }
 }
 
-@media (max-width: 767px) {
+/* Phones + iPads: use tabbed comparison — don't crush the desktop table */
+@media (max-width: 1023px) {
   .comparison-section__desktop {
     display: none;
   }
@@ -409,11 +410,53 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .comparison-section__desktop {
-    width: 100%;
+  .comparison-mobile {
+    gap: 1.45rem;
+    max-width: 40rem;
+    margin-inline: auto;
   }
 
-  .comparison-table-wrap {
-    border-radius: 14px;
+  .comparison-mobile__tabs {
+    gap: 0.55rem;
+    padding: 0.35rem;
+  }
+
+  .comparison-mobile__tab {
+    min-height: 3.1rem;
+    padding: 0.55rem 0.65rem;
+  }
+
+  .comparison-mobile__tab-name {
+    font-size: 0.98rem;
+  }
+
+  .comparison-mobile__summary {
+    padding: 1.45rem 1.35rem;
+  }
+
+  .comparison-mobile__summary-name {
+    font-size: 1.55rem;
+  }
+
+  .comparison-mobile__spec {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 0.75rem 1.25rem;
+    padding: 1.05rem 1.25rem;
+  }
+
+  .comparison-mobile__spec-label {
+    font-size: 0.875rem;
+  }
+
+  .comparison-mobile__spec-value {
+    font-size: 1rem;
+    text-align: right;
+  }
+
+  .comparison-section__footnotes {
+    max-width: 40rem;
+    margin-inline: auto;
+    font-size: 0.9375rem;
   }
 }

@@ -62,7 +62,7 @@ export default function MobileComparison() {
 
         <Button
           as={Link}
-          to="/contact"
+          to="/support"
           variant="brand"
           className="comparison-mobile__summary-cta"
         >
@@ -83,7 +83,7 @@ export default function MobileComparison() {
 
       <Button
         as={Link}
-        to="/contact"
+        to="/support"
         variant="brand"
         className="comparison-mobile__cta"
       >

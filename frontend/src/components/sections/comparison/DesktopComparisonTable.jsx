@@ -48,7 +48,7 @@ export default function DesktopComparisonTable() {
                 </span>
                 <Button
                   as={Link}
-                  to="/contact"
+                  to="/support"
                   variant="brand"
                   className="comparison-choose"
                 >

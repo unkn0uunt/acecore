@@ -27,9 +27,15 @@ export default function HomeSolution() {
               <div className="home-solution__card-copy">
                 <h3 className="home-solution__card-title">{card.title}</h3>
                 <p className="home-solution__card-description">{card.description}</p>
-                <Link to={card.cta.to} className="home-solution__card-link">
-                  <span aria-hidden="true">↗</span> {card.cta.label}
-                </Link>
+                {card.cta.to ? (
+                  <Link to={card.cta.to} className="home-solution__card-link">
+                    <span aria-hidden="true">↗</span> {card.cta.label}
+                  </Link>
+                ) : (
+                  <span className="home-solution__card-link home-solution__card-link--pending">
+                    <span aria-hidden="true">↗</span> {card.cta.label}
+                  </span>
+                )}
               </div>
 
               <div className="home-solution__card-media">

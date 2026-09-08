@@ -7,14 +7,24 @@ const STORAGE_KEY = 'acecore-announcement-dismissed';
 export default function AnnouncementBar({ visible, onDismiss }) {
   if (!visible) return null;
 
+  const linkProps = announcement.external
+    ? {
+        href: announcement.href,
+        target: '_blank',
+        rel: 'noopener noreferrer',
+      }
+    : { to: announcement.href };
+
+  const LinkComponent = announcement.external ? 'a' : Link;
+
   return (
     <div className="announcement-bar" role="region" aria-label="Site announcement">
       <p className="announcement-bar__copy">
         <span>{announcement.text}</span>{' '}
-        <Link to={announcement.href} className="announcement-bar__link">
+        <LinkComponent {...linkProps} className="announcement-bar__link">
           {announcement.linkLabel}
           <span aria-hidden="true"> ↗</span>
-        </Link>
+        </LinkComponent>
       </p>
 
       <button
