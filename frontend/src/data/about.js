@@ -79,3 +79,11 @@ export const aboutCoreValues = [
       'While the world is evolving with industrialization and modernization the family remains the heart core of any society hence our mission is to help bring the family together, improve bonding, and to encourage the instillation of core family values to help breed a world where courage, togetherness, honesty, open communication and creativity is truly encouraged. Better families, make the world even better.',
   },
 ];
+
+export const aboutTeamCta = {
+  eyebrow: 'MEET THE TEAM',
+  title: 'The people powering Acecore',
+  description: 'Meet the minds building reliable energy for the next million homes.',
+  ctaLabel: 'Meet the team',
+  to: '/team',
+};

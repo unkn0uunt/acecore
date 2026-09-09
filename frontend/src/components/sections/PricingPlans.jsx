@@ -101,7 +101,11 @@ export default function PricingPlans() {
                         </ul>
                       </div>
 
-                      <Link to="/support" className="pricing-card__cta">
+                      <Link
+                        to={`/request-quote?model=${plan.id}&config=${mode === 'solar' ? 'solar' : 'powercell'}`}
+                        className="pricing-card__cta"
+                        onClick={(event) => event.stopPropagation()}
+                      >
                         <span className="pricing-card__cta-icon" aria-hidden="true">
                           ↗
                         </span>

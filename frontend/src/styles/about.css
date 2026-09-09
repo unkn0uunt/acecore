@@ -290,6 +290,62 @@
   line-height: 1.55;
 }
 
+.about-team-cta {
+  background: #000000;
+  padding-block: clamp(3rem, 7vw, 5rem);
+}
+
+.about-team-cta__inner {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 0.85rem;
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+}
+
+.about-team-cta__eyebrow {
+  margin: 0;
+  color: #818181;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.about-team-cta__title {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.65rem, 3vw, 2.15rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.about-team-cta__description {
+  margin: 0;
+  max-width: none;
+  color: #818181;
+  font-size: clamp(0.8125rem, 2.6vw, 0.95rem);
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.about-team-cta__link {
+  margin-top: 0.5rem;
+  color: var(--color-brand);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.about-team-cta__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 /* Shared accordion bits (mobile) */
 .about-accordion-chevron {
   flex-shrink: 0;

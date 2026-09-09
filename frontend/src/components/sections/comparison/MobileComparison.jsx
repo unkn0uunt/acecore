@@ -7,12 +7,14 @@ import {
   comparisonSpecifications,
   defaultComparisonProductId,
 } from '../../../data/powercellComparison';
+import { comparisonProductToModel } from '../../../data/requestQuote';
 
 export default function MobileComparison() {
   const [selectedId, setSelectedId] = useState(defaultComparisonProductId);
   const selected =
     comparisonProducts.find((product) => product.id === selectedId) ||
     comparisonProducts[0];
+  const quoteHref = `/request-quote?model=${comparisonProductToModel(selected.id)}`;
 
   return (
     <div className="comparison-mobile">
@@ -62,7 +64,7 @@ export default function MobileComparison() {
 
         <Button
           as={Link}
-          to="/support"
+          to={quoteHref}
           variant="brand"
           className="comparison-mobile__summary-cta"
         >
@@ -83,7 +85,7 @@ export default function MobileComparison() {
 
       <Button
         as={Link}
-        to="/support"
+        to={quoteHref}
         variant="brand"
         className="comparison-mobile__cta"
       >

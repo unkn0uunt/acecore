@@ -4,11 +4,13 @@
 @import './preload.css';
 @import './pricing.css';
 @import './powerCapabilities.css';
+@import './requestQuote.css';
 @import './comparison.css';
 @import './product.css';
 @import './about.css';
 @import './support.css';
 @import './help.css';
+@import './team.css';
 
 *,
 *::before,

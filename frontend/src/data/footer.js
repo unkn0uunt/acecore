@@ -3,6 +3,7 @@ export const footerGroups = [
     title: 'Company',
     links: [
       { label: 'About', to: '/about' },
+      { label: 'Team', to: '/team' },
       { label: 'Terms', to: '/about' },
       { label: 'Privacy', to: '/about' },
     ],

@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-import Button from '../../ui/Button';
 import ComparisonChooseButton from './ComparisonChooseButton';
 import {
   comparisonCopy,
@@ -46,17 +44,7 @@ export default function DesktopComparisonTable() {
                 <span className="comparison-table__product-subtitle">
                   {product.subtitle}
                 </span>
-                <Button
-                  as={Link}
-                  to="/support"
-                  variant="brand"
-                  className="comparison-choose"
-                >
-                  <span>{comparisonCopy.chooseLabel}</span>
-                  <span className="comparison-choose__chevron" aria-hidden="true">
-                    ›
-                  </span>
-                </Button>
+                <ComparisonChooseButton productId={product.id} />
               </th>
             ))}
           </tr>
@@ -96,7 +84,7 @@ export default function DesktopComparisonTable() {
                 key={product.id}
                 className={product.recommended ? 'is-recommended' : undefined}
               >
-                <ComparisonChooseButton />
+                <ComparisonChooseButton productId={product.id} />
               </td>
             ))}
           </tr>
