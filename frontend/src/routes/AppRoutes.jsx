@@ -5,6 +5,8 @@ import PricingPage from '../pages/Pricing/PricingPage';
 import AboutPage from '../pages/About/AboutPage';
 import SupportPage from '../pages/Support/SupportPage';
 import RequestQuotePage from '../pages/RequestQuote/RequestQuotePage';
+import CheckoutPage from '../pages/Checkout/CheckoutPage';
+import OrderConfirmationPage from '../pages/Confirmation/OrderConfirmationPage';
 import MeetTeamPage from '../pages/MeetTeam/MeetTeamPage';
 import PageLayout from '../components/layout/PageLayout';
 import Container from '../components/ui/Container';
@@ -32,6 +34,9 @@ export default function AppRoutes() {
       <Route path="/team" element={<MeetTeamPage />} />
       <Route path="/support" element={<SupportPage />} />
       <Route path="/request-quote" element={<RequestQuotePage />} />
+      <Route path="/checkout" element={<CheckoutPage />} />
+      <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
+      <Route path="/confirmation" element={<Navigate to="/order-confirmation" replace />} />
       <Route path="/contact" element={<Navigate to="/support" replace />} />
       <Route path="/home" element={<Navigate to="/" replace />} />
       <Route path="*" element={<NotFoundPage />} />

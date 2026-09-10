@@ -5,6 +5,12 @@
   padding-block: 4rem 5.5rem;
 }
 
+#quote-configuration,
+.request-quote__field input,
+.request-quote__phone {
+  scroll-margin-top: calc(var(--chrome-offset, 4.35rem) + 1.25rem);
+}
+
 .request-quote__shell {
   width: min(100% - 2.5rem, 77.5rem);
   margin-inline: auto;
@@ -182,10 +188,18 @@
 }
 
 .request-quote__receipt-wrap {
+  display: grid;
+  gap: 1.25rem;
   margin-top: 2rem;
   max-width: 100%;
   min-width: 0;
   overflow-x: clip;
+}
+
+.request-quote__continue.btn {
+  width: 100%;
+  min-height: 3.2rem;
+  border-radius: 10px;
 }
 
 .request-quote__primary::-webkit-scrollbar {

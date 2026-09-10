@@ -22,6 +22,7 @@ export const pricingPlans = [
   {
     id: 'prime',
     name: 'POWERCELL PRIME',
+    amount: 4_400_000,
     prices: {
       solar: '₦4.4M',
       powercell: '₦4.4M',
@@ -32,6 +33,7 @@ export const pricingPlans = [
   {
     id: 'prime-plus',
     name: 'POWERCELL PRIME+',
+    amount: 8_900_000,
     prices: {
       solar: '₦8.9M',
       powercell: '₦8.9M',
@@ -42,6 +44,7 @@ export const pricingPlans = [
   {
     id: 'ultra',
     name: 'POWERCELL ULTRA',
+    amount: 15_500_000,
     prices: {
       solar: '₦15.5M',
       powercell: '₦15.5M',

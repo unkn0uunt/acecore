@@ -9,6 +9,7 @@ import {
   requestQuoteCopy,
   resolveQuotePackageId,
 } from '../../data/requestQuote';
+import { getQuoteSession, setQuoteSession } from '../../lib/quoteSession';
 
 const emptyForm = {
   installationAddress: '',
@@ -29,26 +30,61 @@ function createQuotationNumber() {
   return String(Math.floor(1000 + Math.random() * 9000));
 }
 
+function readStoredForm() {
+  const session = getQuoteSession();
+  return session?.form ? { ...emptyForm, ...session.form } : emptyForm;
+}
+
+function readStoredReceipt() {
+  const session = getQuoteSession();
+  if (!session?.committed || !session.quotationNumber || !session.packageId) return null;
+  const packageItem = quotePackages.find((item) => item.id === session.packageId);
+  if (!packageItem || !session.form) return null;
+  return {
+    form: session.form,
+    packageItem,
+    quotationNumber: session.quotationNumber,
+  };
+}
+
 export default function RequestQuoteSection() {
   const [searchParams] = useSearchParams();
-  const initialPackageId = useMemo(
-    () => resolveQuotePackageId(searchParams.get('model'), searchParams.get('config')),
-    [searchParams],
-  );
+  const modelParam = searchParams.get('model');
+  const initialPackageId = useMemo(() => {
+    if (modelParam) {
+      return resolveQuotePackageId(modelParam, searchParams.get('config'));
+    }
+    const session = getQuoteSession();
+    if (session?.packageId) return session.packageId;
+    return resolveQuotePackageId(null, null);
+  }, [modelParam, searchParams]);
 
   const [selectedPackageId, setSelectedPackageId] = useState(initialPackageId);
-  const [form, setForm] = useState(emptyForm);
+  const [form, setForm] = useState(readStoredForm);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('');
-  const [receipt, setReceipt] = useState(null);
+  const [receipt, setReceipt] = useState(readStoredReceipt);
   const receiptRef = useRef(null);
+  const skipInitialReceiptScroll = useRef(Boolean(receipt));
 
   useEffect(() => {
-    setSelectedPackageId(initialPackageId);
-  }, [initialPackageId]);
+    if (!modelParam) return;
+    setSelectedPackageId(resolveQuotePackageId(modelParam, searchParams.get('config')));
+  }, [modelParam, searchParams]);
+
+  useEffect(() => {
+    setQuoteSession({
+      packageId: selectedPackageId,
+      form,
+    });
+  }, [selectedPackageId, form]);
 
   useEffect(() => {
     if (!receipt || !receiptRef.current) return;
+    if (skipInitialReceiptScroll.current) {
+      skipInitialReceiptScroll.current = false;
+      return;
+    }
     receiptRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [receipt]);
 
@@ -98,11 +134,19 @@ export default function RequestQuoteSection() {
       return;
     }
 
+    const quotationNumber =
+      getQuoteSession()?.quotationNumber || createQuotationNumber();
+    setQuoteSession({
+      packageId: selectedPackageId,
+      form: { ...form },
+      committed: true,
+      quotationNumber,
+    });
     setStatus(requestQuoteCopy.successMessage);
     setReceipt({
       form: { ...form },
       packageItem: selectedPackage,
-      quotationNumber: createQuotationNumber(),
+      quotationNumber,
     });
   };
 
@@ -133,7 +177,7 @@ export default function RequestQuoteSection() {
         <div className="request-quote__layout">
           <div className="request-quote__primary">
             <Reveal className="request-quote__options-wrap" y={20}>
-              <fieldset className="request-quote__options">
+              <fieldset className="request-quote__options" id="quote-configuration">
                 <legend className="visually-hidden">Choose a PowerCell package</legend>
                 {quotePackages.map((item) => {
                   const selected = selectedPackageId === item.id;
@@ -365,6 +409,14 @@ export default function RequestQuoteSection() {
                     packageItem={receipt.packageItem}
                     quotationNumber={receipt.quotationNumber}
                   />
+                  <Button
+                    as={Link}
+                    to="/checkout"
+                    variant="brand"
+                    className="request-quote__continue"
+                  >
+                    {requestQuoteCopy.continueLabel}
+                  </Button>
                 </div>
               ) : null}
             </Reveal>

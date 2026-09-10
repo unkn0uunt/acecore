@@ -20,8 +20,9 @@ export const requestQuoteCopy = {
   legal:
     'By clicking "Get your quote", I authorise Acecore to share the contact information I provide with a local Certified Installer to contact me about this request.',
   submitLabel: 'Get your quote',
+  continueLabel: 'Continue to checkout',
   successMessage:
-    'Quote request captured for frontend demo. Backend integration pending.',
+    'Your quote is ready. Review it below, then continue to checkout.',
   videoSrc:
     'https://res.cloudinary.com/dznd7vzlb/video/upload/q_auto,f_auto/v1788784782/Website_Section_hh2bfc.mp4',
 };
