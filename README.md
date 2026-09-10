@@ -6,7 +6,6 @@ Public website redesign for Acecore — renewable energy technology.
 
 ```text
 acecore/
-├── CURSOR.md          # Cursor engineering instructions
 ├── README.md
 ├── docs/
 │   └── PRD.md         # Product requirements
