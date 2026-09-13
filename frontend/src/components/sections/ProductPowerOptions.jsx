@@ -44,7 +44,7 @@ export default function ProductPowerOptions() {
           </p>
         </Reveal>
 
-        <Reveal className="product-power-opts__visual" y={28} delay={0.06}>
+        <Reveal className="product-power-opts__visual" y={28} delay={0.12}>
           <p className="product-power-opts__swipe-hint">
             {productPowerOptionsCopy.swipeHint}
           </p>
@@ -59,7 +59,7 @@ export default function ProductPowerOptions() {
           </div>
         </Reveal>
 
-        <Reveal className="product-power-opts__runtime" y={22} delay={0.1}>
+        <Reveal className="product-power-opts__runtime" y={22} delay={0.18}>
           <p className="product-power-opts__runtime-label">
             {productPowerOptionsCopy.runtimeLabel}
           </p>

@@ -10,6 +10,7 @@ export const primaryNav = [
     ],
   },
   { label: 'About us', to: '/about' },
+  { label: 'Team', to: '/team' },
 ];
 
 export const contactCta = {

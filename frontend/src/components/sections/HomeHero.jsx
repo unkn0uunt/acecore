@@ -22,18 +22,18 @@ export default function HomeHero() {
 
       <div className="home-hero__content">
         <div className="home-hero__copy">
-          <Reveal delay={0.05}>
+          <Reveal delay={0.12}>
             <h1 id="home-hero-title" className="home-hero__title">
               <span>{heroCopy.titleLine1}</span>
               <span>{heroCopy.titleLine2}</span>
             </h1>
           </Reveal>
 
-          <Reveal delay={0.14}>
+          <Reveal delay={0.26}>
             <p className="home-hero__description">{heroCopy.description}</p>
           </Reveal>
 
-          <Reveal delay={0.22} className="home-hero__actions">
+          <Reveal delay={0.38} className="home-hero__actions">
             <Button
               as={Link}
               to={heroCopy.primaryCta.to}
@@ -59,7 +59,7 @@ export default function HomeHero() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.3} className="home-hero__features" y={20}>
+        <Reveal delay={0.5} className="home-hero__features" y={20}>
           <ul className="home-hero__features-list">
             {heroFeatures.map((feature) => (
               <li key={feature.id} className="home-feature-card">

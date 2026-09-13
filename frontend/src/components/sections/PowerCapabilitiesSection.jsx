@@ -100,13 +100,13 @@ export default function PowerCapabilitiesSection() {
           <p className="power-cap__description">{powerCapabilitiesCopy.description}</p>
         </Reveal>
 
-        <Reveal className="power-cap__grid power-cap__grid--desktop" y={28} delay={0.06}>
+        <Reveal className="power-cap__grid power-cap__grid--desktop" y={28} delay={0.12}>
           {powerCapabilityModels.map((model) => (
             <PowerCapabilityCard key={model.id} model={model} />
           ))}
         </Reveal>
 
-        <Reveal className="power-cap__grid power-cap__grid--mobile" y={20} delay={0.06}>
+        <Reveal className="power-cap__grid power-cap__grid--mobile" y={20} delay={0.12}>
           {powerCapabilityModels.map((model) => (
             <PowerCapabilityAccordion
               key={`mobile-${model.id}`}

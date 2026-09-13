@@ -2,7 +2,7 @@
 
 .pricing-plans {
   background: #000000;
-  padding-block: clamp(5.5rem, 10vw, 7.5rem) clamp(3.5rem, 7vw, 5.5rem);
+  padding-block: clamp(7rem, 12vw, 9rem) clamp(3.5rem, 7vw, 5.5rem);
 }
 
 .pricing-plans__inner {

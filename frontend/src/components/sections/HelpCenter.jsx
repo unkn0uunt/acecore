@@ -1,6 +1,6 @@
 import { useId, useState } from 'react';
 import Reveal from '../ui/Reveal';
-import { helpArticles, helpHeroCopy, helpTopics } from '../../data/help';
+import { helpArticles, helpDownloads, helpHeroCopy, helpTopics } from '../../data/help';
 
 function HelpSearch({ value, onChange }) {
   const inputId = useId();
@@ -232,7 +232,27 @@ export default function HelpCenter() {
           <HelpSearch value={query} onChange={setQuery} />
         </Reveal>
 
-        <Reveal className="help-center__docs" y={24} delay={0.06}>
+        <Reveal className="help-center__downloads" y={20} delay={0.14}>
+          <h2 className="help-center__downloads-title">Downloads</h2>
+          <ul className="help-center__downloads-list">
+            {helpDownloads.map((item) => (
+              <li key={item.id}>
+                <a
+                  className="help-center__download-card"
+                  href={item.href}
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="help-center__download-label">{item.label}</span>
+                  <span className="help-center__download-desc">{item.description}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        <Reveal className="help-center__docs" y={24} delay={0.24}>
           <MobileTopicNavigation
             topics={filteredTopics}
             activeId={activeId}

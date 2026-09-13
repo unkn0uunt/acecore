@@ -80,7 +80,7 @@ export default function ProductPowercoreApp() {
           </p>
         </Reveal>
 
-        <Reveal className="powercore-app__showcase" y={28} delay={0.06}>
+        <Reveal className="powercore-app__showcase" y={28} delay={0.12}>
           <div className="powercore-app__features powercore-app__features--left">
             {leftFeatures.map((feature) => (
               <AppFeatureStatic key={feature.id} {...feature} />
@@ -104,13 +104,13 @@ export default function ProductPowercoreApp() {
           </div>
         </Reveal>
 
-        <Reveal className="powercore-app__features-tablet" y={20} delay={0.08}>
+        <Reveal className="powercore-app__features-tablet" y={20} delay={0.32}>
           {stackedFeatures.map((feature) => (
             <AppFeatureStatic key={`tablet-${feature.id}`} {...feature} />
           ))}
         </Reveal>
 
-        <Reveal className="powercore-app__features-mobile" y={20} delay={0.08}>
+        <Reveal className="powercore-app__features-mobile" y={20} delay={0.32}>
           {stackedFeatures.map((feature) => (
             <AppFeatureAccordion
               key={`mobile-${feature.id}`}

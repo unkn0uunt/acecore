@@ -53,13 +53,13 @@ export default function AboutCoreValues() {
           </h2>
         </Reveal>
 
-        <Reveal className="about-values__list about-values__list--desktop" y={20} delay={0.06}>
+        <Reveal className="about-values__list about-values__list--desktop" y={20} delay={0.12}>
           {aboutCoreValues.map((value) => (
             <ValueRow key={value.id} {...value} />
           ))}
         </Reveal>
 
-        <Reveal className="about-values__list about-values__list--mobile" y={20} delay={0.06}>
+        <Reveal className="about-values__list about-values__list--mobile" y={20} delay={0.12}>
           {aboutCoreValues.map((value) => (
             <ValueAccordion
               key={`mobile-${value.id}`}

@@ -82,13 +82,6 @@ export default function Navbar({
           borderRadius: floating ? 14 : 0,
         }}
         transition={{ duration: 0.5, ease: easeOut }}
-        style={{
-          background: 'transparent',
-          border: 'none',
-          boxShadow: 'none',
-          backdropFilter: 'none',
-          WebkitBackdropFilter: 'none',
-        }}
       >
         <div className="navbar__inner">
           <NavLink to="/" className="navbar__logo" aria-label="Acecore home" onClick={onCloseMenu}>

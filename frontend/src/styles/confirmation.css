@@ -6,7 +6,7 @@
   --confirmation-muted: #8a8a8a;
   background: #000000;
   max-width: 100vw;
-  padding: calc(var(--chrome-offset, 4.35rem) + 1.25rem) 1.25rem 5.5rem;
+  padding: calc(var(--chrome-offset, 4.35rem) + 2.5rem) 1.25rem 5.5rem;
   overflow-x: clip;
   box-sizing: border-box;
 }

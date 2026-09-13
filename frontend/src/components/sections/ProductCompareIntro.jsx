@@ -13,7 +13,7 @@ export default function ProductCompareIntro() {
           </h2>
         </Reveal>
 
-        <Reveal className="product-compare-intro__visual" y={24} delay={0.06}>
+        <Reveal className="product-compare-intro__visual" y={24} delay={0.12}>
           <div
             className="product-compare-intro__placeholder"
             role="img"

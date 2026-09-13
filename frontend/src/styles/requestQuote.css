@@ -2,7 +2,7 @@
 
 .request-quote {
   background: #000000;
-  padding-block: 4rem 5.5rem;
+  padding-block: 5.75rem 5.5rem;
 }
 
 #quote-configuration,
@@ -405,7 +405,7 @@
 
 @media (min-width: 768px) and (max-width: 849px) {
   .request-quote {
-    padding-block: 4.5rem 6rem;
+    padding-block: 6rem 6rem;
   }
 
   .request-quote__title {
@@ -428,7 +428,7 @@
 
 @media (min-width: 850px) and (max-width: 1023px) {
   .request-quote {
-    padding-block: 4.5rem 6.5rem;
+    padding-block: 6rem 6.5rem;
   }
 
   .request-quote__title {
@@ -471,7 +471,7 @@
 
 @media (min-width: 1024px) {
   .request-quote {
-    padding-block: 5rem 12rem;
+    padding-block: 6.5rem 12rem;
   }
 
   .request-quote__shell {

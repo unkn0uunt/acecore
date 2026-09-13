@@ -86,7 +86,7 @@ export default function HomeFeatureBlock({
 
         <div className="home-feature__cards">
           {cards.map((card, index) => (
-            <Reveal key={card.id} className="home-feature__card" delay={0.06 * index} y={22}>
+            <Reveal key={card.id} className="home-feature__card" delay={0.12 * index} y={22}>
               <span className="home-feature__card-icon" aria-hidden="true">
                 <img src={icons[card.icon]} alt="" />
               </span>

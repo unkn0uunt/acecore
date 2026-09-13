@@ -34,9 +34,19 @@ export default function Footer() {
                       {link.to ? (
                         <Link to={link.to}>{link.label}</Link>
                       ) : (
-                        <a href={link.href}>{link.label}</a>
-                      )}
-                    </li>
+                        <a
+                          href={link.href}
+                          {...(String(link.href || '').endsWith('.pdf')
+                            ? {
+                                download: true,
+                                target: '_blank',
+                                rel: 'noopener noreferrer',
+                              }
+                            : {})}
+                        >
+                          {link.label}
+                        </a>
+                      )}                    </li>
                   ))}
                 </ul>
               </div>

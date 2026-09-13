@@ -10,7 +10,7 @@ export default function HomeIntro() {
           <p className="home-intro__eyebrow">{introCopy.eyebrow}</p>
         </Reveal>
 
-        <Reveal delay={0.08}>
+        <Reveal delay={0.32}>
           <h2 id="home-intro-title" className="home-intro__title">
             <span className="home-intro__title-lead">{introCopy.lead}</span>{' '}
             <span className="home-intro__title-muted">{introCopy.muted}</span>
@@ -19,7 +19,7 @@ export default function HomeIntro() {
 
         <div className="home-intro__stats">
           {introStats.map((stat, index) => (
-            <Reveal key={stat.id} delay={0.14 + index * 0.08} y={20}>
+            <Reveal key={stat.id} delay={0.22 + index * 0.14} y={20}>
               <ImpactAnimatedStat
                 target={stat.target}
                 label={stat.label}

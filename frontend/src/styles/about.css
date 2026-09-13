@@ -2,7 +2,7 @@
 
 .about-hero {
   background: #0c0d0c;
-  padding-block: clamp(4.5rem, 10vw, 6.5rem) clamp(4rem, 9vw, 7rem);
+  padding-block: clamp(6rem, 12vw, 8rem) clamp(4rem, 9vw, 7rem);
 }
 
 .about-hero__inner {
@@ -431,7 +431,7 @@
 
 @media (max-width: 767px) {
   .about-hero {
-    padding-block: 4rem 3.25rem;
+    padding-block: 5.75rem 3.25rem;
   }
 
   .about-hero__inner {

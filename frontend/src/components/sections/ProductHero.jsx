@@ -23,7 +23,7 @@ export default function ProductHero() {
           <p className="product-hero__description">{productHeroCopy.description}</p>
         </Reveal>
 
-        <Reveal className="product-hero__stats" y={20} delay={0.06}>
+        <Reveal className="product-hero__stats" y={20} delay={0.12}>
           <ul className="product-hero__stats-list">
             {productHeroStats.map((stat) => (
               <li key={stat.id} className="product-hero__stat">
@@ -42,7 +42,7 @@ export default function ProductHero() {
           </ul>
         </Reveal>
 
-        <Reveal className="product-hero__stage" y={36} delay={0.1}>
+        <Reveal className="product-hero__stage" y={36} delay={0.18}>
           <div className="product-hero__composition">
             <img
               className="product-hero__mark"

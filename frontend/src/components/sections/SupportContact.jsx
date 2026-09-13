@@ -55,13 +55,13 @@ export default function SupportContact() {
         </Reveal>
 
         <div className="support-contact__layout">
-          <Reveal className="support-contact__channels" y={20} delay={0.06}>
+          <Reveal className="support-contact__channels" y={20} delay={0.12}>
             {supportChannels.map((channel) => (
               <ChannelCard key={channel.id} {...channel} />
             ))}
           </Reveal>
 
-          <Reveal className="support-contact__form-wrap" y={24} delay={0.1}>
+          <Reveal className="support-contact__form-wrap" y={24} delay={0.18}>
             <form className="support-form" onSubmit={handleSubmit} noValidate>
               {supportFormFields.map((field) => {
                 const sharedProps = {

@@ -23,7 +23,7 @@ export default function HomeSolution() {
 
         <div className="home-solution__grid">
           {solutionCards.map((card, index) => (
-            <Reveal key={card.id} className="home-solution__card" delay={0.08 * index} y={28}>
+            <Reveal key={card.id} className="home-solution__card" delay={0.14 * index} y={28}>
               <div className="home-solution__card-copy">
                 <h3 className="home-solution__card-title">{card.title}</h3>
                 <p className="home-solution__card-description">{card.description}</p>

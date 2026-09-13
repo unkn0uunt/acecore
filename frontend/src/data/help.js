@@ -6,6 +6,15 @@ export const helpHeroCopy = {
   searchPlaceholder: 'Search products or topics...',
 };
 
+export const helpDownloads = [
+  {
+    id: 'user-manual',
+    label: 'PowerCell User Manual',
+    description: 'Installation, setup, and operation guide (PDF).',
+    href: '/docs/acecore-powercell-user-manual.pdf',
+  },
+];
+
 export const helpTopics = [
   { id: 'powercell-app', label: 'Powercell App' },
   { id: 'getting-started', label: 'Getting Started' },

@@ -24,7 +24,7 @@ export default function ProductMechanicalSpecs() {
           </p>
         </Reveal>
 
-        <Reveal className="product-mech-specs__visual" y={28} delay={0.06}>
+        <Reveal className="product-mech-specs__visual" y={28} delay={0.12}>
           <div className="product-mech-specs__diagram-frame">
             <img
               className="product-mech-specs__diagram"
@@ -34,7 +34,7 @@ export default function ProductMechanicalSpecs() {
           </div>
         </Reveal>
 
-        <Reveal className="product-mech-specs__grid-wrap" y={20} delay={0.1}>
+        <Reveal className="product-mech-specs__grid-wrap" y={20} delay={0.18}>
           <dl className="product-mech-specs__grid">
             {productMechanicalSpecs.map((spec) => (
               <div key={spec.id} className="product-mech-specs__item">

@@ -68,7 +68,7 @@
 }
 
 .navbar-shell.is-floating {
-  /* Minimal inset — floating pill stays nearly full-bleed */
+  /* Side insets for the scrolled glass pill */
   padding-inline: 0.25rem;
 }
 
@@ -76,15 +76,35 @@
   width: 100%;
   border: 0;
   overflow: visible;
-  background: transparent !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition:
+    background var(--duration-header) var(--ease-out),
+    border-color var(--duration-header) var(--ease-out),
+    box-shadow var(--duration-header) var(--ease-out),
+    backdrop-filter var(--duration-header) var(--ease-out);
 }
 
-.navbar.is-floating,
 .navbar.is-flush {
-  background: transparent !important;
+  background: transparent;
+  border-bottom-color: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-radius: 0;
+}
+
+.navbar.is-floating {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 12px 36px -16px rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(22px) saturate(1.45);
+  -webkit-backdrop-filter: blur(22px) saturate(1.45);
 }
 
 .navbar__inner {
@@ -471,7 +491,7 @@
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  padding-top: calc(var(--chrome-offset) + clamp(3.25rem, 6vh, 5.25rem));
+  padding-top: calc(var(--chrome-offset) + clamp(5rem, 8vh, 7rem));
   padding-bottom: clamp(1.35rem, 3vw, 2.35rem);
   padding-left: 0;
   padding-right: 0;
@@ -701,7 +721,7 @@
 
 @media (min-width: 1280px) {
   .home-hero {
-    padding-top: calc(var(--chrome-offset) + 5.5rem);
+    padding-top: calc(var(--chrome-offset) + 7rem);
     padding-left: 0;
     padding-right: 0;
   }

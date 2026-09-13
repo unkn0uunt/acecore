@@ -22,19 +22,19 @@ export default function ComparisonSection() {
           </header>
         </Reveal>
 
-        <Reveal y={32} delay={0.06}>
+        <Reveal y={32} delay={0.12}>
           <div className="comparison-section__desktop">
             <DesktopComparisonTable />
           </div>
         </Reveal>
 
-        <Reveal y={28} delay={0.06}>
+        <Reveal y={28} delay={0.12}>
           <div className="comparison-section__mobile">
             <MobileComparison />
           </div>
         </Reveal>
 
-        <Reveal delay={0.1} y={20}>
+        <Reveal delay={0.18} y={20}>
           <ul className="comparison-section__footnotes">
             {comparisonFootnotes.map((note) => (
               <li key={note}>{note}</li>

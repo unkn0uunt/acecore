@@ -60,7 +60,7 @@ export default function AboutHero() {
           <p className="about-hero__description">{aboutHeroCopy.description}</p>
         </Reveal>
 
-        <Reveal className="about-hero__media" y={24} delay={0.06}>
+        <Reveal className="about-hero__media" y={24} delay={0.12}>
           <img
             className="about-hero__image"
             src={heroImage}
@@ -68,7 +68,7 @@ export default function AboutHero() {
           />
         </Reveal>
 
-        <Reveal className="about-hero__principles" y={20} delay={0.1}>
+        <Reveal className="about-hero__principles" y={20} delay={0.18}>
           <ul className="about-principles about-principles--desktop">
             {aboutPrinciples.map((item) => (
               <li key={item.id} className="about-principles__item">

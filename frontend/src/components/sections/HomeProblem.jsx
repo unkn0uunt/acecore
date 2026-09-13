@@ -15,7 +15,7 @@ export default function HomeProblem() {
 
         <ul className="home-problem__list">
           {problemItems.map((item, index) => (
-            <Reveal as="li" key={item.id} className="home-problem__item" delay={0.06 * index} y={24}>
+            <Reveal as="li" key={item.id} className="home-problem__item" delay={0.12 * index} y={24}>
               <span className="home-problem__number">{item.number}</span>
               <div className="home-problem__copy">
                 <h3 className="home-problem__item-title">{item.title}</h3>

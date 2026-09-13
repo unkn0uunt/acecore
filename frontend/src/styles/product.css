@@ -3,7 +3,7 @@
 .product-hero {
   overflow-x: clip;
   background: #293331;
-  padding-block: clamp(5.5rem, 10vw, 7rem) 0;
+  padding-block: clamp(7rem, 12vw, 8.5rem) 0;
 }
 
 .product-hero__inner {
@@ -792,7 +792,7 @@
 
 @media (max-width: 767px) {
   .product-hero {
-    padding-block: clamp(4.5rem, 16vw, 5.5rem) 0;
+    padding-block: clamp(6rem, 16vw, 7rem) 0;
   }
 
   .product-hero__inner {

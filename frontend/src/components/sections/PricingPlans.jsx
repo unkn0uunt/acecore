@@ -53,7 +53,7 @@ export default function PricingPlans() {
             const isOpen = openPlanId === plan.id;
 
             return (
-              <Reveal key={plan.id} delay={0.05 * index} y={28}>
+              <Reveal key={plan.id} delay={0.1 * index} y={28}>
                 <article className={`pricing-card${isOpen ? ' is-open' : ''}`}>
                   <button
                     type="button"

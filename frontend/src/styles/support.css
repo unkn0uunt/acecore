@@ -2,7 +2,7 @@
 
 .support-contact {
   background: #0c0f0e;
-  padding-block: clamp(3.75rem, 9vw, 5.75rem) clamp(4.5rem, 10vw, 7.5rem);
+  padding-block: clamp(5.5rem, 11vw, 7.5rem) clamp(4.5rem, 10vw, 7.5rem);
 }
 
 .support-contact__inner {
@@ -232,7 +232,7 @@
 /* —— Desktop (Figma 1440 source) —— */
 @media (min-width: 1024px) {
   .support-contact {
-    padding-block: 5.5rem 6.75rem;
+    padding-block: 6.5rem 6.75rem;
   }
 
   .support-contact__inner {
@@ -338,7 +338,7 @@
 
 @media (min-width: 1440px) {
   .support-contact {
-    padding-block: 5.75rem 7rem;
+    padding-block: 6.75rem 7rem;
   }
 
   .support-contact__layout {

@@ -26,12 +26,14 @@ export const footerGroups = [
       { label: 'Pricing', to: '/pricing' },
       { label: 'Our services', to: '/product' },
       { label: 'About us', to: '/about' },
+      { label: 'Team', to: '/team' },
     ],
   },
   {
     title: 'Support',
     links: [
       { label: 'Help Center', to: '/support' },
+      { label: 'User Manual', href: '/docs/acecore-powercell-user-manual.pdf' },
       { label: 'Warranty', to: '/support' },
       { label: 'Financing', to: '/support' },
     ],
@@ -39,6 +41,7 @@ export const footerGroups = [
   {
     title: 'Download',
     links: [
+      { label: 'User Manual (PDF)', href: '/docs/acecore-powercell-user-manual.pdf' },
       { label: 'Apple Store', href: '#' },
       { label: 'Google Play Store', href: '#' },
     ],

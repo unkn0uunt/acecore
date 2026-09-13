@@ -39,7 +39,7 @@ export default function HomeStorage() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.08}>
+        <Reveal delay={0.32}>
           <p className="home-storage__caption">
             {storageCopy.captionBefore}
             <span>{storageCopy.captionHighlight}</span>
@@ -48,7 +48,7 @@ export default function HomeStorage() {
 
         <ul className="home-storage__appliances">
           {storageAppliances.map((item, index) => (
-            <Reveal as="li" key={item.id} className="home-storage__appliance" delay={0.05 * index} y={18}>
+            <Reveal as="li" key={item.id} className="home-storage__appliance" delay={0.1 * index} y={18}>
               <img
                 className="home-storage__appliance-icon"
                 src={applianceIcons[item.id]}

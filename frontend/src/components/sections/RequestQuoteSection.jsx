@@ -227,11 +227,11 @@ export default function RequestQuoteSection() {
               </p>
             </Reveal>
 
-            <Reveal className="request-quote__preview request-quote__preview--mobile" y={24} delay={0.04}>
+            <Reveal className="request-quote__preview request-quote__preview--mobile" y={24} delay={0.32}>
               {previewBlock}
             </Reveal>
 
-            <Reveal className="request-quote__form-wrap" y={24} delay={0.06}>
+            <Reveal className="request-quote__form-wrap" y={24} delay={0.12}>
               <h2 className="request-quote__form-title">{requestQuoteCopy.formTitle}</h2>
 
               <form className="request-quote__form" onSubmit={handleSubmit} noValidate>
@@ -422,7 +422,7 @@ export default function RequestQuoteSection() {
             </Reveal>
           </div>
 
-          <Reveal className="request-quote__preview request-quote__preview--desktop" y={28} delay={0.08}>
+          <Reveal className="request-quote__preview request-quote__preview--desktop" y={28} delay={0.32}>
             {previewBlock}
           </Reveal>
         </div>

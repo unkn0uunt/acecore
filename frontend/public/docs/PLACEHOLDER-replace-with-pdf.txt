@@ -1,0 +1,7 @@
+Acecore PowerCell User Manual
+
+Replace this file with the official PDF named:
+acecore-powercell-user-manual.pdf
+
+Path: frontend/public/docs/acecore-powercell-user-manual.pdf
+Public URL: /docs/acecore-powercell-user-manual.pdf
