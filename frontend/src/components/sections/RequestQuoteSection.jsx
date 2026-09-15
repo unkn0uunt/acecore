@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useId, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, useSearchParams } from 'react-router-dom';
 import Reveal from '../ui/Reveal';
 import Button from '../ui/Button';
@@ -47,6 +48,90 @@ function readStoredReceipt() {
   };
 }
 
+function QuoteReceiptModal({ receipt, open, onClose }) {
+  const titleId = useId();
+  const closeRef = useRef(null);
+
+  useEffect(() => {
+    if (!open) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    closeRef.current?.focus();
+
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') onClose();
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [open, onClose]);
+
+  if (!open || !receipt || typeof document === 'undefined') return null;
+
+  return createPortal(
+    <div className="quote-receipt-modal" role="presentation">
+      <button
+        type="button"
+        className="quote-receipt-modal__backdrop"
+        aria-label="Close quotation"
+        onClick={onClose}
+      />
+      <div
+        className="quote-receipt-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={titleId}
+      >
+        <div className="quote-receipt-modal__header">
+          <h2 id={titleId} className="quote-receipt-modal__title">
+            Your quotation
+          </h2>
+          <button
+            ref={closeRef}
+            type="button"
+            className="quote-receipt-modal__close"
+            aria-label="Close quotation"
+            onClick={onClose}
+          >
+            ×
+          </button>
+        </div>
+
+        <div className="quote-receipt-modal__body">
+          <QuoteReceipt
+            form={receipt.form}
+            packageItem={receipt.packageItem}
+            quotationNumber={receipt.quotationNumber}
+          />
+        </div>
+
+        <div className="quote-receipt-modal__actions">
+          <Button
+            as={Link}
+            to="/checkout"
+            variant="brand"
+            className="quote-receipt-modal__continue"
+          >
+            {requestQuoteCopy.continueLabel}
+          </Button>
+          <button
+            type="button"
+            className="quote-receipt-modal__dismiss"
+            onClick={onClose}
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>,
+    document.body,
+  );
+}
+
 export default function RequestQuoteSection() {
   const [searchParams] = useSearchParams();
   const modelParam = searchParams.get('model');
@@ -64,8 +149,7 @@ export default function RequestQuoteSection() {
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('');
   const [receipt, setReceipt] = useState(readStoredReceipt);
-  const receiptRef = useRef(null);
-  const skipInitialReceiptScroll = useRef(Boolean(receipt));
+  const [receiptOpen, setReceiptOpen] = useState(false);
 
   useEffect(() => {
     if (!modelParam) return;
@@ -78,15 +162,6 @@ export default function RequestQuoteSection() {
       form,
     });
   }, [selectedPackageId, form]);
-
-  useEffect(() => {
-    if (!receipt || !receiptRef.current) return;
-    if (skipInitialReceiptScroll.current) {
-      skipInitialReceiptScroll.current = false;
-      return;
-    }
-    receiptRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, [receipt]);
 
   const selectedPackage =
     quotePackages.find((item) => item.id === selectedPackageId) || quotePackages[0];
@@ -131,6 +206,7 @@ export default function RequestQuoteSection() {
     if (Object.keys(nextErrors).length > 0) {
       setStatus('');
       setReceipt(null);
+      setReceiptOpen(false);
       return;
     }
 
@@ -148,6 +224,7 @@ export default function RequestQuoteSection() {
       packageItem: selectedPackage,
       quotationNumber,
     });
+    setReceiptOpen(true);
   };
 
   const previewBlock = (
@@ -400,25 +477,17 @@ export default function RequestQuoteSection() {
                     {status}
                   </p>
                 ) : null}
-              </form>
 
-              {receipt ? (
-                <div className="request-quote__receipt-wrap" ref={receiptRef}>
-                  <QuoteReceipt
-                    form={receipt.form}
-                    packageItem={receipt.packageItem}
-                    quotationNumber={receipt.quotationNumber}
-                  />
-                  <Button
-                    as={Link}
-                    to="/checkout"
-                    variant="brand"
-                    className="request-quote__continue"
+                {receipt ? (
+                  <button
+                    type="button"
+                    className="request-quote__view-quote"
+                    onClick={() => setReceiptOpen(true)}
                   >
-                    {requestQuoteCopy.continueLabel}
-                  </Button>
-                </div>
-              ) : null}
+                    View quotation
+                  </button>
+                ) : null}
+              </form>
             </Reveal>
           </div>
 
@@ -427,6 +496,12 @@ export default function RequestQuoteSection() {
           </Reveal>
         </div>
       </div>
+
+      <QuoteReceiptModal
+        receipt={receipt}
+        open={receiptOpen}
+        onClose={() => setReceiptOpen(false)}
+      />
     </section>
   );
 }
