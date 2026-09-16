@@ -438,7 +438,7 @@
   border-radius: 6px;
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1024px) {
   .navbar-shell.is-floating {
     padding-inline: 0;
   }
